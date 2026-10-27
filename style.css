@@ -33,6 +33,31 @@ body {
           overflow: hidden;
 }
 
+/* The tech words that drift down behind the page (made by script.js) */
+.falling-word {
+          position: absolute;
+          top: -3rem;
+          font-weight: 700;
+          color: var(--primary);
+          white-space: nowrap;
+          pointer-events: none;
+          animation-name: fall;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+          to {
+                    transform: translateY(calc(100vh + 6rem));
+          }
+}
+
+@media (prefers-reduced-motion: reduce) {
+          .falling-word {
+                    display: none;
+          }
+}
+
 .glow-orb {
           position: absolute;
           border-radius: 50%;
